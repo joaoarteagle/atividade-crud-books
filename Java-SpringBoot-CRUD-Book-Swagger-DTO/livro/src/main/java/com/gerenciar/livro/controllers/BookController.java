@@ -20,13 +20,13 @@ public class BookController {
     @Autowired
     private BookService bookService;
 
-    @PostMapping("create-book")
+    @PostMapping
     @Operation(summary = "Criando um Livro.")
     public ResponseEntity<Book> createBook(@RequestBody CreateBookDTO createBookDTO){
         return bookService.create(createBookDTO);
     }
 
-    @GetMapping("find-all-books")
+    @GetMapping
     @Operation(summary = "Buscando todos os Livros.")
     public ResponseEntity<List<Book>> findAllBooks(){
         return bookService.findAllBooks();
